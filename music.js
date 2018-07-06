@@ -227,31 +227,6 @@ function search_video(query, cb) {
 function isYoutube(str) {
     return str.toLowerCase().indexOf('youtube.com') > -1;
 }
- client.on('message', message => {
-     if (message.content === prefix +"help") {
-    const embed = new Discord.RichEmbed()
-     .setColor("RANDOM")
-     .addField(`Zyad,aLmutairi commands:
-+about - shows info about the bot
-+ping - checks the bot's latency
-  Music:
-+play - shows the song that is currently playing
-+play <title|URL|subcommand> - plays the provided song
-+queue [pagenum] - shows the current queue
-+تعال <title|URL|subcommand> - plays the provided song
-+skip - votes to skip the current song
-  DJ:
-+ok <title|URL|subcommand> - plays the provided song
-+skip - skips the current song
-+pause - pauses the current song
-+skipt <position> - skips to the specified song
-+stop - stops the current song and clears the queue
-+vol [0-150] - sets or shows volume
-For additional help,  `)
-
-      message.channel.send({embed});
-     }
-    });
 	client.on('message', message => {
     if (message.content.startsWith("habout")) {
       message.channel.send({

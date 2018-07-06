@@ -288,26 +288,6 @@ client.on('ready', () => {
   console.log('---------------')
 });
 
-client.on('message', message => {
-     if (message.content === ".servers") {
-     let embed = new Discord.RichEmbed()
-  .setColor("#0000FF")
-  .addField("**Server: **" , client.guilds.size)
-  message.channel.sendEmbed(embed);
-    }
-if (message.content === 'fhelp') {
-         let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)    
-      .addField("** 🎶 اوامر الميوزك**","** **")
-      .addField("**fplay :musical_note:**","**لـ تشغيل المطلوب**")
-      .addField("**fstop  :musical_keyboard:**","**لـ ايقاف المطلوب**")
-      .addField("**fskip :musical_score:**","**لـ لتخطي الاغنية**")
-      .addField("**fvol :musical_score:**","**لـ رفع و تخفيض صوت البوت**")
-.setColor('RANDOM')
-  message.author.sendEmbed(embed);
-    }
-});
-
 client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Falsteni Bot - Script By : M3a4x`);

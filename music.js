@@ -231,22 +231,22 @@ function isYoutube(str) {
      if (message.content === prefix +"help") {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
-     .addField(`Falsteni-music commands:
-fabout - shows info about the bot
-fping - checks the bot's latency
+     .addField(`Zyad,aLmutairi commands:
++about - shows info about the bot
++ping - checks the bot's latency
   Music:
-fplay - shows the song that is currently playing
-fplay <title|URL|subcommand> - plays the provided song
-fqueue [pagenum] - shows the current queue
-fjoin <title|URL|subcommand> - plays the provided song
-fskip - votes to skip the current song
++play - shows the song that is currently playing
++play <title|URL|subcommand> - plays the provided song
++queue [pagenum] - shows the current queue
++تعال <title|URL|subcommand> - plays the provided song
++skip - votes to skip the current song
   DJ:
-fok <title|URL|subcommand> - plays the provided song
-fskip - skips the current song
-fpause - pauses the current song
-fskipt <position> - skips to the specified song
-fstop - stops the current song and clears the queue
-fvol [0-150] - sets or shows volume
++ok <title|URL|subcommand> - plays the provided song
++skip - skips the current song
++pause - pauses the current song
++skipt <position> - skips to the specified song
++stop - stops the current song and clears the queue
++vol [0-150] - sets or shows volume
 For additional help,  `)
 
       message.channel.send({embed});
@@ -279,3 +279,42 @@ For additional help,  `)
          message.channel.send({embed:embed});
                         }
                     });
+
+
+client.on('ready', () => {
+  client.user.setGame(` By M3a4x #4272 .`,'https://www.twitch.tv/mjrmqm');
+  console.log('---------------');
+  console.log('Falsteni Bot Is Online')
+  console.log('---------------')
+});
+
+client.on('message', message => {
+     if (message.content === ".servers") {
+     let embed = new Discord.RichEmbed()
+  .setColor("#0000FF")
+  .addField("**Server: **" , client.guilds.size)
+  message.channel.sendEmbed(embed);
+    }
+if (message.content === 'fhelp') {
+         let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)    
+      .addField("** 🎶 اوامر الميوزك**","** **")
+      .addField("**fplay :musical_note:**","**لـ تشغيل المطلوب**")
+      .addField("**fstop  :musical_keyboard:**","**لـ ايقاف المطلوب**")
+      .addField("**fskip :musical_score:**","**لـ لتخطي الاغنية**")
+      .addField("**fvol :musical_score:**","**لـ رفع و تخفيض صوت البوت**")
+.setColor('RANDOM')
+  message.author.sendEmbed(embed);
+    }
+});
+
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`Falsteni Bot - Script By : M3a4x`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : M3a4x ' `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(` FuCk All Of You | fhelp  `,"http://twitch.tv/mjrmqm")
+client.user.setStatus("dnd")
+});
